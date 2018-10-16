@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Flask Template Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <h1>Applications</h1>
+          <p>
+            <strong>
+              {{ view_model.summary }}
+            </strong>
+          </p>
+          <table class="table">
+            <thead class="thead-dark">
+            <tr>
+              <th>Local Authority Code</th>
+              <th>Application Count</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for r in view_model.rows %}
+            <tr>
+              <td>{{r.la}}</td>
+              <td>{{r.count}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div class="col-3"></div>
+      </div>
+      </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js">
+    </script>
+  </body>
+</html>
